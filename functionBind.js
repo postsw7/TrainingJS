@@ -29,7 +29,7 @@ var bind = function(func, that) {
     var arr = Array.prototype.slice.call(arguments);
     args = args.concat(arr);
     return func.apply(that, args);
-  }
+  };
 };
 
 /*

@@ -1,13 +1,13 @@
 var expect = require('chai').expect;
 var bind = require('../functionBind.js');
 
-describe('functionBind', function() {
+describe('functionBind', function () {
 
-  it('should have true for result', function() {
+  it('should have true for result', function () {
 
     var alice = {
       name: 'alice',
-      shout: function(){
+      shout: function (){
         return this.name;
       }
     }
@@ -16,7 +16,7 @@ describe('functionBind', function() {
     var boundTemp = bind(alice.shout, {name: 'bob'});
     boundTemp() === 'bob'; // alerts 'bob'
 
-    var func = function(a, b){ return a + b };
+    var func = function (a, b){ return a + b };
     var boundFunc = bind(func, null, 'foo');
     var result = boundFunc('bar');
     ; // true
@@ -26,11 +26,11 @@ describe('functionBind', function() {
     expect(result === 'foobar').to.equal(true);
   });
 
-  it('should have true for result', function() {
+  it('should have true for result', function () {
 
     var alice = {
       name: 'alice',
-      shout: function(){
+      shout: function (){
         return this.name;
       }
     }
@@ -39,7 +39,7 @@ describe('functionBind', function() {
     boundTemp = alice.shout.bind({name: 'bob'});
     boundTemp(); // alerts 'bob'
 
-    var func = function(a, b){ return a + b };
+    var func = function (a, b){ return a + b };
     var boundFunc = func.bind(null, 'foo');
     var result = boundFunc('bar');
 
@@ -47,4 +47,5 @@ describe('functionBind', function() {
     expect(boundTemp()).to.equal('bob');
     expect(result === 'foobar').to.equal(true);
   });
+
 });

@@ -12,4 +12,4 @@ describe('whatNumberIsIt', function () {
     assert.equal(whatNumberIsIt(Infinity+1),"Input number is Number.POSITIVE_INFINITY");
   });
 
-})
+});
